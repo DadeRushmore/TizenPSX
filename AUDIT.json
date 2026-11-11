@@ -1,0 +1,8 @@
+{
+  "result": "PASS",
+  "sourceFiles": 1929,
+  "packageFiles": 52,
+  "coreSHA256": "f4ddeada13923de8cfe6ee2cfd2e662fa0cedd2d8f1f58b7749d8d9fbb3e69ff",
+  "failures": [],
+  "scope": "ZIP integrity, blocked files, common secret/path patterns, resource correspondence, native provenance and required notices. Not legal certification or TV validation."
+}
