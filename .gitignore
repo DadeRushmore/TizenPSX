@@ -1,0 +1,10 @@
+__pycache__/
+**/bin/
+**/obj/
+.cache/
+*.tpk
+*.wgt
+*.p12
+*.pfx
+.env
+release-output/

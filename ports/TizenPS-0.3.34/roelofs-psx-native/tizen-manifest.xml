@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?><manifest xmlns="http://tizen.org/ns/packages" api-version="5.0" package="org.roelof.psxnative" version="0.3.39"><profile name="tv"/><ui-application appid="org.roelof.psxnative" exec="RoelofPSXNative.dll" type="dotnet" multiple="false" taskmanage="true" nodisplay="false" launch_mode="single" api-version="5.0"><label>TizenPSX</label><icon>PSXNative.png</icon></ui-application><privileges><privilege>http://tizen.org/privilege/internet</privilege><privilege>http://tizen.org/privilege/externalstorage</privilege></privileges></manifest>
+

@@ -1,3 +1,11 @@
+# Third-party notices
+
+Frontend/PCSX ReARMed GPL-2.0; glibc subset LGPL-2.1-or-later; Overscan MIT; vendored components retain their notices.
+
+This source publication preserves individual copyright and license notices in the vendored trees. Its top-level GPL text does not relicense components with different terms. Core source location: `ports/TizenPS-0.3.34/pcsx-rearmed-native/`. SDK/toolchain binaries are not distributed. The current distribution scope is in [DISTRIBUTION.md](DISTRIBUTION.md).
+
+The historical notes below may describe earlier private or public binary packages, paths relative to an older source root, or assets omitted here. They are retained for attribution; they do not assert that this source snapshot includes those binaries or has passed a fresh rebuild. Current paths are in BUILD.md, and current exclusions are in PUBLIC-SOURCE.json.
+
 # Licensing and attribution
 
 TizenPS application, C# ELF loader, native host bridge, tests and original UI artwork are distributed under GNU GPL version 2; see [LICENSE](LICENSE). This continues the licensing recorded in the original application documentation. Third-party files retain their own notices and licenses. No license here grants rights to Sony/Samsung trademarks, game artwork, games or BIOS images.

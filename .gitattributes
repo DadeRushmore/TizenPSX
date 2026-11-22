@@ -1,0 +1,4 @@
+* -text
+
+# Public source snapshot: preserve inventoried bytes on all platforms.
+* -text !eol -export-ignore

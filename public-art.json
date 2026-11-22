@@ -1,0 +1,102 @@
+[
+  {
+    "path": "ports/TizenPS-0.3.34/roelofs-psx-native/res/ui/background.png",
+    "width": 960,
+    "height": 540,
+    "accent": [
+      169,
+      119,
+      235
+    ]
+  },
+  {
+    "path": "ports/TizenPS-0.3.34/roelofs-psx-native/res/ui/button-focus.png",
+    "width": 256,
+    "height": 256,
+    "accent": [
+      169,
+      119,
+      235
+    ]
+  },
+  {
+    "path": "ports/TizenPS-0.3.34/roelofs-psx-native/res/ui/cover-focus.png",
+    "width": 256,
+    "height": 256,
+    "accent": [
+      169,
+      119,
+      235
+    ]
+  },
+  {
+    "path": "ports/TizenPS-0.3.34/roelofs-psx-native/res/ui/hero-frame.png",
+    "width": 256,
+    "height": 256,
+    "accent": [
+      169,
+      119,
+      235
+    ]
+  },
+  {
+    "path": "ports/TizenPS-0.3.34/roelofs-psx-native/res/ui/missing.png",
+    "width": 256,
+    "height": 256,
+    "accent": [
+      169,
+      119,
+      235
+    ]
+  },
+  {
+    "path": "ports/TizenPS-0.3.34/roelofs-psx-native/res/ui/tab-focus.png",
+    "width": 256,
+    "height": 256,
+    "accent": [
+      169,
+      119,
+      235
+    ]
+  },
+  {
+    "path": "ports/TizenPS-0.3.34/roelofs-psx-native/res/ui/tab.png",
+    "width": 256,
+    "height": 256,
+    "accent": [
+      169,
+      119,
+      235
+    ]
+  },
+  {
+    "path": "ports/TizenPS-0.3.34/roelofs-psx-native/res/ui/tizenps-emblem.png",
+    "width": 256,
+    "height": 256,
+    "accent": [
+      169,
+      119,
+      235
+    ]
+  },
+  {
+    "path": "ports/TizenPS-0.3.34/roelofs-psx-native/res/ui/tizenps-wordmark.png",
+    "width": 256,
+    "height": 256,
+    "accent": [
+      169,
+      119,
+      235
+    ]
+  },
+  {
+    "path": "ports/TizenPS-0.3.34/roelofs-psx-native/shared/res/PSXNative.png",
+    "width": 256,
+    "height": 256,
+    "accent": [
+      169,
+      119,
+      235
+    ]
+  }
+]

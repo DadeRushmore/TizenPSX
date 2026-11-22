@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>tizen50</TargetFramework>
+    <AssemblyName>RoelofPSXNative</AssemblyName>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <PathMap>$(MSBuildProjectDirectory)=/src/tizenps/app</PathMap>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Tizen.NET.Sdk" Version="1.1.9"/>
+    <PackageReference Include="Tizen.NET" Version="5.0.0.14562"/>
+    <PackageReference Include="Tizen.NET.TV" Version="4.4.0.1341"/>
+  </ItemGroup>
+</Project>

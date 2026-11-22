@@ -1,0 +1,11 @@
+{
+  "probeLibrarySource": "https://github.com/Apps2Samsung/Overscan",
+  "probeLibraryCommit": "bf9b194c9c3d28574cafaa3294fcda6465da61d0",
+  "probeLibrarySHA256": "2fd3e2b570285f7bb6c5eac69590cd6d6cf602b5bd344ef69c21b8952572b3aa",
+  "pcsxCoreSource": "https://github.com/libretro/pcsx_rearmed",
+  "pcsxCoreCommit": "7b0e8f8fadfbce3d170d195b9d9eecaabfa08c8e",
+  "build": ".NET SDK 3.1.426; Tizen.NET.Sdk 1.1.9; Tizen.NET 5.0.0.14562; Tizen.NET.TV 4.4.0.1341",
+  "note": "0.3.33 full-spec test defaults: dynarec and enhanced resolution enabled for fresh and pre-migration global/per-game options; new saved exceptions respected. Consolidate missing Neverhood duplicates into verified PSX/Klaymen Klaymen entry without game-file deletion. Native core unchanged from working 0.3.32.",
+  "pcsxCoreSHA256": "f4ddeada13923de8cfe6ee2cfd2e662fa0cedd2d8f1f58b7749d8d9fbb3e69ff",
+  "compiler": "Zig 0.13.0 arm-linux-gnueabi.2.17; Cortex-A72; explicit -Xclang -O3 for C; libc_nonshared wrappers included; no LTO or fast-math"
+}

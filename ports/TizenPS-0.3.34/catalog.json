@@ -1,0 +1,341 @@
+[
+  {
+    "id": "tekken3",
+    "title": "Tekken 3",
+    "genre": "Fighting",
+    "publisher": "Namco",
+    "year": "1998",
+    "coverFile": "Tekken 3 (Europe).png",
+    "artRegion": "Europe",
+    "regionConfirmed": false,
+    "description": "The King of Iron Fist returns. Master a new generation of fighters, take on the arcade ladder, or challenge a friend.",
+    "aliases": [
+      "tekken 3"
+    ],
+    "cover": "assets/demo-covers/tekken3.svg"
+  },
+  {
+    "id": "crash",
+    "title": "Crash Bandicoot",
+    "genre": "Platformer",
+    "publisher": "Sony Computer Entertainment",
+    "year": "1996",
+    "coverFile": "Crash Bandicoot (Europe).png",
+    "artRegion": "Europe",
+    "regionConfirmed": false,
+    "description": "Spin, jump and smash your way across the Wumpa Islands. A jungle adventure with a very familiar orange hero.",
+    "aliases": [
+      "crash bandicoot"
+    ],
+    "cover": "assets/demo-covers/crash.svg"
+  },
+  {
+    "id": "mgs",
+    "title": "Metal Gear Solid",
+    "genre": "Stealth action",
+    "publisher": "Konami",
+    "year": "1998",
+    "coverFile": "Metal Gear Solid (Europe) (Disc 1).png",
+    "artRegion": "Europe",
+    "regionConfirmed": false,
+    "description": "Infiltrate Shadow Moses as Solid Snake. Stay out of sight, follow the codec and uncover a nuclear conspiracy.",
+    "aliases": [
+      "metal gear solid"
+    ],
+    "cover": "assets/demo-covers/mgs.svg"
+  },
+  {
+    "id": "driver",
+    "title": "Driver",
+    "genre": "Driving",
+    "publisher": "GT Interactive",
+    "year": "1999",
+    "coverFile": "Driver (Europe).png",
+    "artRegion": "Europe",
+    "regionConfirmed": true,
+    "description": "Go undercover behind the wheel. Lose the police through city streets in a love letter to classic car-chase cinema.",
+    "aliases": [
+      "driver"
+    ],
+    "cover": "assets/demo-covers/driver.svg"
+  },
+  {
+    "id": "silenthill",
+    "title": "Silent Hill",
+    "genre": "Survival horror",
+    "publisher": "Konami",
+    "year": "1999",
+    "coverFile": "Silent Hill (USA).png",
+    "artRegion": "USA",
+    "regionConfirmed": false,
+    "description": "A missing daughter. A town swallowed by fog. Follow Harry Mason into one of PlayStation’s most unsettling mysteries.",
+    "aliases": [
+      "silent hill"
+    ],
+    "cover": "assets/demo-covers/silenthill.svg"
+  },
+  {
+    "id": "sfalpha3",
+    "title": "Street Fighter Alpha 3",
+    "genre": "Fighting",
+    "publisher": "Capcom",
+    "year": "1998",
+    "coverFile": "Street Fighter Alpha 3 (Europe).png",
+    "artRegion": "Europe",
+    "regionConfirmed": true,
+    "description": "Choose your fighter and your fighting style. Colourful arcade battles meet a deep roster and the World Tour challenge.",
+    "aliases": [
+      "street fighter alpha 3"
+    ],
+    "cover": "assets/demo-covers/sfalpha3.svg"
+  },
+  {
+    "id": "twisted4",
+    "title": "Twisted Metal 4",
+    "genre": "Vehicular combat",
+    "publisher": "Sony Computer Entertainment",
+    "year": "1999",
+    "coverFile": "Twisted Metal 4 (USA).png",
+    "artRegion": "USA",
+    "regionConfirmed": false,
+    "description": "Heavy weapons, wild arenas and an outrageous cast. Enter the tournament where the last vehicle standing wins.",
+    "aliases": [
+      "twisted metal 4"
+    ],
+    "cover": "assets/demo-covers/twisted4.svg"
+  },
+  {
+    "id": "fifa2002",
+    "title": "2002 FIFA World Cup",
+    "genre": "Football",
+    "publisher": "Electronic Arts",
+    "year": "2002",
+    "coverFile": "2002 FIFA World Cup (Europe) (En,Sv).png",
+    "artRegion": "Europe",
+    "regionConfirmed": true,
+    "description": "Take your national team to the world stage and chase the trophy in the official 2002 tournament game.",
+    "aliases": [
+      "2002 fifa world cup"
+    ],
+    "cover": "assets/demo-covers/fifa2002.svg"
+  },
+  {
+    "id": "medal",
+    "title": "Medal of Honor",
+    "genre": "First-person shooter",
+    "publisher": "Electronic Arts",
+    "year": "1999",
+    "coverFile": "Medal of Honor (USA).png",
+    "artRegion": "USA",
+    "regionConfirmed": false,
+    "description": "Step into the boots of an Allied operative. Complete missions behind enemy lines in the original PlayStation wartime shooter.",
+    "aliases": [
+      "medal of honor"
+    ],
+    "cover": "assets/demo-covers/medal.svg"
+  },
+  {
+    "id": "mk4",
+    "title": "Mortal Kombat 4",
+    "genre": "Fighting",
+    "publisher": "Midway",
+    "year": "1998",
+    "coverFile": "Mortal Kombat 4 (USA).png",
+    "artRegion": "USA",
+    "regionConfirmed": false,
+    "description": "Enter the arena as Mortal Kombat moves into 3D. Familiar rivals, new combatants and weapons join the fight.",
+    "aliases": [
+      "mortal kombat 4"
+    ],
+    "cover": "assets/demo-covers/mk4.svg"
+  },
+  {
+    "id": "spiderman",
+    "title": "Spider-Man",
+    "genre": "Action adventure",
+    "publisher": "Activision",
+    "year": "2000",
+    "coverFile": "Spider-Man (USA).png",
+    "artRegion": "USA",
+    "regionConfirmed": false,
+    "description": "Swing above the streets, crawl the walls and face iconic villains in the web-slinger’s PlayStation adventure.",
+    "aliases": [
+      "spider man",
+      "spiderman"
+    ],
+    "cover": "assets/demo-covers/spiderman.svg"
+  },
+  {
+    "id": "dino2",
+    "title": "Dino Crisis 2",
+    "genre": "Action adventure",
+    "publisher": "Capcom",
+    "year": "2000",
+    "coverFile": "Dino Crisis 2 (USA).png",
+    "artRegion": "USA",
+    "regionConfirmed": false,
+    "description": "Join Regina and Dylan on a rescue mission through dinosaur territory. Keep moving, keep shooting and keep the combo alive.",
+    "aliases": [
+      "dino crisis 2"
+    ],
+    "cover": "assets/demo-covers/dino2.svg"
+  },
+  {
+    "id": "mvc",
+    "title": "Marvel vs. Capcom",
+    "genre": "Fighting",
+    "publisher": "Capcom",
+    "year": "1999",
+    "coverFile": "Marvel vs. Capcom - Clash of Super Heroes (USA).png",
+    "artRegion": "USA",
+    "regionConfirmed": false,
+    "description": "Clash of Super Heroes. Comic-book legends and Capcom favourites collide in a spectacular crossover fighter.",
+    "aliases": [
+      "marvel vs capcom",
+      "marvel vs capcom clash of super heroes"
+    ],
+    "cover": "assets/demo-covers/mvc.svg"
+  },
+  {
+    "id": "fifa2005",
+    "title": "FIFA Soccer 2005",
+    "genre": "Football",
+    "publisher": "Electronic Arts",
+    "year": "2004",
+    "coverFile": "FIFA Soccer 2005 (USA) (En,Es).png",
+    "artRegion": "USA",
+    "regionConfirmed": false,
+    "description": "Choose your club and take to the pitch in one of the final FIFA releases for the original PlayStation.",
+    "aliases": [
+      "fifa soccer 2005",
+      "fifa football 2005",
+      "fifa 2005"
+    ],
+    "cover": "assets/demo-covers/fifa2005.svg"
+  },
+  {
+    "id": "klaymen",
+    "title": "Klaymen Klaymen",
+    "genre": "Adventure",
+    "publisher": "Riverhillsoft",
+    "year": "1998",
+    "coverFile": "Klaymen Klaymen - Neverhood no Nazo (Japan).png",
+    "artRegion": "Japan",
+    "regionConfirmed": true,
+    "description": "Neverhood no Nazo. Explore an eccentric clay-built world full of curious contraptions and unusual puzzles.",
+    "aliases": [
+      "klaymen klaymen neverhood no nazo",
+      "klaymen klaymen"
+    ],
+    "cover": "assets/demo-covers/klaymen.svg"
+  },
+  {
+    "id": "myst",
+    "title": "Myst",
+    "genre": "Puzzle adventure",
+    "publisher": "Psygnosis",
+    "year": "1995",
+    "coverFile": "Myst (Europe) (En,Fr,De,Es,It).png",
+    "artRegion": "Europe",
+    "regionConfirmed": true,
+    "description": "An island, a book and a mystery. Explore at your own pace and piece together the secrets of the Ages.",
+    "aliases": [
+      "myst"
+    ],
+    "cover": "assets/demo-covers/myst.svg"
+  },
+  {
+    "id": "mktrilogy",
+    "title": "Mortal Kombat Trilogy",
+    "genre": "Fighting",
+    "publisher": "Midway",
+    "year": "1996",
+    "coverFile": "Mortal Kombat Trilogy (USA).png",
+    "artRegion": "USA",
+    "regionConfirmed": false,
+    "description": "The classic tournament expands. Revisit the fighters and arenas of the early Mortal Kombat games in one collection.",
+    "aliases": [
+      "mortal kombat trilogy"
+    ],
+    "cover": "assets/demo-covers/mktrilogy.svg"
+  },
+  {
+    "id": "cotton",
+    "title": "Cotton Original",
+    "genre": "Shoot ’em up",
+    "publisher": "Success",
+    "year": "1999",
+    "coverFile": "Fantastic Night Dreams - Cotton Original (Japan).png",
+    "artRegion": "Japan",
+    "regionConfirmed": true,
+    "description": "Fantastic Night Dreams. Take flight with Cotton and Silk through a colourful arcade world of magic and monsters.",
+    "aliases": [
+      "fantastic night dreams cotton original",
+      "cotton original"
+    ],
+    "cover": "assets/demo-covers/cotton.svg"
+  },
+  {
+    "id": "rave",
+    "title": "Plue no Daibouken",
+    "genre": "Action",
+    "publisher": "Konami",
+    "year": "2002",
+    "coverFile": "Plue no Daibouken from Groove Adventure Rave (Japan).png",
+    "artRegion": "Japan",
+    "regionConfirmed": true,
+    "description": "A Groove Adventure Rave spin-off starring Plue. Explore a playful adventure from the Japanese PlayStation library.",
+    "aliases": [
+      "groove adventure rave plue no daibouken",
+      "plue no daibouken from groove adventure rave",
+      "plue no daibouken"
+    ],
+    "cover": "assets/demo-covers/rave.svg"
+  },
+  {
+    "id": "nekketsu",
+    "title": "Nekketsu Oyako",
+    "genre": "Beat ’em up",
+    "publisher": "Technosoft",
+    "year": "1994",
+    "coverFile": "Nekketsu Oyako (Japan).png",
+    "artRegion": "Japan",
+    "regionConfirmed": true,
+    "description": "Take the fight to the streets in Technosoft’s colourful side-scrolling brawler. Original Japanese cover; your copy is translation-patched.",
+    "aliases": [
+      "nekketsu oyako"
+    ],
+    "cover": "assets/demo-covers/nekketsu.svg"
+  },
+  {
+    "id": "earthworm2",
+    "title": "Earthworm Jim 2",
+    "genre": "Platformer",
+    "publisher": "Virgin Interactive",
+    "year": "1996",
+    "coverFile": "Earthworm Jim 2 (Europe).png",
+    "artRegion": "Europe",
+    "regionConfirmed": true,
+    "description": "Jim is back for another wonderfully strange rescue mission. Expect bizarre enemies, unexpected levels and plenty of slapstick.",
+    "aliases": [
+      "earthworm jim 2"
+    ],
+    "cover": "assets/demo-covers/earthworm2.svg"
+  },
+  {
+    "id": "jetace",
+    "title": "Jet Ace",
+    "genre": "Flight action",
+    "publisher": "Phoenix Games",
+    "year": "",
+    "coverFile": "Jet Ace (Europe).png",
+    "artRegion": "Europe",
+    "regionConfirmed": true,
+    "description": "Take to the skies for an arcade flight-combat mission from the later years of the PlayStation library.",
+    "aliases": [
+      "jet ace"
+    ],
+    "cover": "assets/demo-covers/jetace.svg",
+    "yearNote": "Release-year sources disagree (2003/2004); omitted pending confirmation."
+  }
+]

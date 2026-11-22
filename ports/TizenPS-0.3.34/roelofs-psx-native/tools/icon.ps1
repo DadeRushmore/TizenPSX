@@ -1,0 +1,30 @@
+Add-Type -AssemblyName System.Drawing
+$bitmap = New-Object System.Drawing.Bitmap 512,512
+$g = [System.Drawing.Graphics]::FromImage($bitmap)
+$g.SmoothingMode = 'AntiAlias'
+$g.Clear([System.Drawing.Color]::FromArgb(13,17,35))
+$purple = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(143,107,255))
+$cyan = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(73,232,219))
+$light = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(226,233,250))
+$dark = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(34,42,66))
+$g.FillEllipse($purple,40,60,432,360)
+$g.FillEllipse($dark,48,68,416,344)
+$g.FillRectangle($light,118,174,276,137)
+$g.FillEllipse($light,72,169,158,174)
+$g.FillEllipse($light,282,169,158,174)
+$g.FillRectangle($dark,116,215,83,27)
+$g.FillRectangle($dark,144,187,27,83)
+$g.FillEllipse($purple,343,195,29,29)
+$g.FillEllipse($cyan,377,228,29,29)
+$g.FillEllipse($purple,343,261,29,29)
+$g.FillEllipse($cyan,309,228,29,29)
+$g.FillRectangle($dark,230,247,19,9)
+$g.FillRectangle($dark,260,247,19,9)
+$font = New-Object System.Drawing.Font 'Segoe UI',42,([System.Drawing.FontStyle]::Bold)
+$small = New-Object System.Drawing.Font 'Segoe UI',14,([System.Drawing.FontStyle]::Bold)
+$format = New-Object System.Drawing.StringFormat
+$format.Alignment = 'Center'
+$g.DrawString('PSX',$font,$light,256,330,$format)
+$g.DrawString('ROELOF',$small,$cyan,256,105,$format)
+$bitmap.Save((Join-Path $PSScriptRoot '../shared/res/PSXNative.png'),[System.Drawing.Imaging.ImageFormat]::Png)
+$g.Dispose();$bitmap.Dispose()

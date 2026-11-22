@@ -1,0 +1,23 @@
+{
+  "app": "TizenPSX",
+  "version": "0.3.39",
+  "tag": "v0.3.39-public-source.20261122",
+  "date": "2026-11-22",
+  "scope": "public source repository; not an installable package",
+  "project": "ports/TizenPS-0.3.34/roelofs-psx-native/Player.csproj",
+  "frozen_private_package_sha256": "a1eb88d8726c7a1ee34d5a315ee4b5af85410e733ac4c9aa10c962334e3ceb33",
+  "binary_release": "withheld pending listed review items",
+  "licenses": "Frontend/PCSX ReARMed GPL-2.0; glibc subset LGPL-2.1-or-later; Overscan MIT; vendored components retain their notices.",
+  "remaining_binary_release_checks": [
+    "Rebuild without commercial cover scans and verify original homebrew fixture reproduction and every native object/source pairing.",
+    "Restore runtime assets only after recording their provenance and required notices; rebuild omitted executables from their corresponding sources."
+  ],
+  "excluded_binary_paths": [
+    "ports/TizenPS-0.3.34/roelofs-psx-native/res/libovprobe.so",
+    "ports/TizenPS-0.3.34/roelofs-psx-native/res/libpcsx_tizen.so",
+    "ports/TizenPS-0.3.34/pcsx-rearmed-native/tizen-build/libc-link-check.so",
+    "ports/TizenPS-0.3.34/pcsx-rearmed-native/tizen-build/libpcsx_tizen.so"
+  ],
+  "frozen_baseline_date": "2026-11-16",
+  "publication_exclusions": []
+}

@@ -1,0 +1,45 @@
+name: Publish source edition
+on:
+  push:
+    branches: [main]
+    paths: [PUBLIC-SOURCE.json]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: source-publication
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Verify curated source inventory
+        run: python3 tools/verify-public-source.py
+      - name: Package the exact commit
+        id: package
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os, pathlib, subprocess
+          metadata = json.loads(pathlib.Path('PUBLIC-SOURCE.json').read_text())
+          name = metadata['app'] + '-' + metadata['version'] + '-public-source.zip'
+          out = pathlib.Path('release-output')
+          out.mkdir()
+          subprocess.run(['git', 'archive', '--format=zip', '--output=' + str(out / name), 'HEAD'], check=True)
+          (out / 'SHA256SUMS.txt').write_text(hashlib.sha256((out / name).read_bytes()).hexdigest() + '  ' + name + '\n')
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write('tag=' + metadata['tag'] + '\n')
+              output.write('title=' + metadata['app'] + ' ' + metadata['version'] + ' — public source edition\n')
+          PY
+      - name: Publish source prerelease
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ steps.package.outputs.tag }}
+          RELEASE_TITLE: ${{ steps.package.outputs.title }}
+        run: |
+          gh release create "$RELEASE_TAG" release-output/* --target "$GITHUB_SHA" --title "$RELEASE_TITLE" --notes-file RELEASE.md --prerelease --latest=false
