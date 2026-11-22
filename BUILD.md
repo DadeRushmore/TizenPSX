@@ -1,4 +1,4 @@
-# Working with TizenPSX 0.3.39 source
+# Working with TizenPSX 0.3.40 source
 
 This is a source publication, not a complete installer build. The source corresponds to the frozen development tree; omitted prebuilt inputs are listed in PUBLIC-SOURCE.json. Do not copy private binaries into a public package without completing DISTRIBUTION.md.
 
@@ -26,4 +26,4 @@ To regenerate original application artwork, run `python render-public-art.py` fr
 3. Supply `AuthorPath`, `AuthorPass`, `DistributorPath` and `DistributorPass` through your local environment and run `python build.py`. That helper builds the managed project; it does not rebuild missing native resources.
 4. Run the applicable host checks and test the exact package on the target TV before describing it as tested or stable.
 
-No runtime behavior is changed by this publication work. The exact private baseline hash is recorded solely for recovery/reference, not as a distributable artifact.
+The 0.3.40 update adds animated cover browsing. The exact private baseline hash is recorded solely for recovery/reference, not as a distributable artifact.

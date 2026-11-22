@@ -1,6 +1,6 @@
 # TizenPSX interface previews
 
-These PNGs were rendered on Windows on 22 November 2026 from the current application layout code using host drawing adapters. They show the development interface with its existing application backgrounds, branding and icons. They are **not photographs or captures from a Samsung TV**. TV fonts, compositing and installed-version details may differ.
+The animation and stills were rendered on Windows on 22 November 2026 from the current application layout code using host drawing adapters. They show the development interface with its existing application backgrounds, branding and icons. They are **not photographs or captures from a Samsung TV**. TV fonts, compositing and installed-version details may differ.
 
 The public source edition uses placeholder runtime assets and omits native executables; these documentation previews do not mean that the source ZIP is an installable package. Consult the repository README for release availability.
 
@@ -13,3 +13,5 @@ The four original cover assets are in [art/](art/). The exact prompt template an
 ## Layout sources
 
 `ports/TizenPS-0.3.34/roelofs-psx-native/LibraryScenes.cs`; host primitives rendered at 1920 × 1080.
+
+The animation uses timed samples from the 0.3.40 carousel. It shows two moves to the right and two back to the left.

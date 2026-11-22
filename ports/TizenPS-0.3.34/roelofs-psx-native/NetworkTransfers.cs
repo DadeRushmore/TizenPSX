@@ -129,7 +129,7 @@ partial class PlayerApp {
  }
  void SendDiagnostics(){
   if(pcToken.Length==0){networkProgress="Pair with the PC first.";return;}
-  string report="TizenPSX 0.3.39 network diagnostics\n"+DateTime.UtcNow.ToString("O")+"\nOptions:\n"+options.Serialize()+"\nCustom mapping:\n"+customMap.Serialize()+"\nController:\n"+ControllerReport();
+  string report="TizenPSX 0.3.40 network diagnostics\n"+DateTime.UtcNow.ToString("O")+"\nOptions:\n"+options.Serialize()+"\nCustom mapping:\n"+customMap.Serialize()+"\nController:\n"+ControllerReport();
   RunNetwork("Sending diagnostics to PC…",async cancel=>{string file=Path.Combine(data,"diagnostic-upload-"+Guid.NewGuid().ToString("N")+".txt");try{
    var text=new StringBuilder(report);text.AppendLine(HardwareReport.Capture());foreach(var path in new[]{logPath,GameplayTracePath,NativeTracePath})if(File.Exists(path)){text.AppendLine("\n"+Path.GetFileName(path));string content=File.ReadAllText(path);text.Append(content.Length>2000000?content.Substring(content.Length-2000000):content);}
    File.WriteAllText(file,text.ToString());using(var client=new CompanionClient(pcAddress,pcPort,pcToken)){var receipt=await client.Upload("diagnostics",file,cancel).ConfigureAwait(false);ProgressNetwork("Diagnostics received on PC: "+receipt.Saved);}

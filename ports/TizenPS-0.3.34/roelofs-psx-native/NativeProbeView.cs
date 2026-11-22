@@ -16,7 +16,7 @@ partial class PlayerApp {
  string NativeTracePath=>Path.Combine(data,"native-controller-trace.txt");
  void BeginNativeProbe(){
   nativeTraceBuffer.Clear();nativeTraceFlush=KeyTime;eventPad.Profile=(ControllerProfile)options.NativeProfile;eventPad.Reset();nativeGuide=new NativeProbeGuide(KeyTime);nativeProbe=new NativeProbePlan(options.Slot,KeyTime,NativeProbeGuide.Duration,60);nativePacket=0;nativeReadMs=0;
-  try{File.WriteAllText(NativeTracePath,"TizenPSX 0.3.39 native controller probe\nUTC: "+DateTime.UtcNow.ToString("O")+"\nAPI assembly: "+typeof(GamePad).Assembly.FullName+"\nOne slot only: "+nativeProbe.Slot+"\nProfile movement 90-second sequence; up to 60 batches/second. Every populated raw event is logged. No native-call timeout.\n");nativeProbePhase="Ready";}
+  try{File.WriteAllText(NativeTracePath,"TizenPSX 0.3.40 native controller probe\nUTC: "+DateTime.UtcNow.ToString("O")+"\nAPI assembly: "+typeof(GamePad).Assembly.FullName+"\nOne slot only: "+nativeProbe.Slot+"\nProfile movement 90-second sequence; up to 60 batches/second. Every populated raw event is logged. No native-call timeout.\n");nativeProbePhase="Ready";}
   catch(Exception e){nativeProbe.Stop();nativeProbePhase="Trace unavailable; sampling stopped: "+e.Message;}
  }
  void NativeCheckpoint(string text){

@@ -1,10 +1,10 @@
-# TizenPSX 0.3.39
+# TizenPSX 0.3.40
 
-PlayStation emulation powered by PCSX ReARMed. Browse your PlayStation collection in a cover carousel or switch to a grid for a wider view.
+PlayStation emulation powered by PCSX ReARMed. Press Left or Right to slide through your PlayStation cases. Each cover grows as it reaches the centre, with the game title above it. Press OK to open its game page or Down to switch to the grid.
 
-![TizenPSX — Cover carousel](docs/showcase/preview.png)
+![TizenPSX — Cover carousel](docs/showcase/browse.webp)
 
-*Current development interface, rendered from app layout code with sample artwork. This is a desktop preview, not a TV capture; your own games and covers populate the library. [Preview details](docs/showcase/README.md).*
+*Current development interface, rendered from app layout code with sample artwork. This is a desktop preview, not a TV capture; your own games and covers populate the library. [Full-size still](docs/showcase/preview.png) · [Preview details](docs/showcase/README.md).*
 
 [Download current source](https://github.com/DadeRushmore/TizenPSX/archive/refs/heads/main.zip) · [Releases](https://github.com/DadeRushmore/TizenPSX/releases) · [Build guide](BUILD.md)
 
@@ -20,7 +20,7 @@ PlayStation emulation powered by PCSX ReARMed. Browse your PlayStation collectio
 
 **This version does not include an installable TPK and is not an out-of-the-box build.** Native executables, private packages and selected prebuilt runtime assets are omitted. See [BUILD.md](BUILD.md) for the source layout and prerequisites, and [DISTRIBUTION.md](DISTRIBUTION.md) for the remaining binary-release work.
 
-The earlier [0.3.38 beta installer](https://github.com/DadeRushmore/TizenPSX/releases/tag/v0.3.38-beta) remains available with its original source archive and limitations. This source update does not replace it with a 0.3.39 installer.
+The earlier [0.3.38 beta installer](https://github.com/DadeRushmore/TizenPSX/releases/tag/v0.3.38-beta) remains available with its original source archive and limitations. This source update does not replace it with a 0.3.40 installer.
 
 ## Source layout
 

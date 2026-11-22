@@ -10,7 +10,8 @@ using System.Runtime.InteropServices;
 
 sealed partial class LauncherView {
 
- void BeginScene(string breadcrumb,LibraryGame game=null){
+ void BeginScene(string breadcrumb,LibraryGame game=null,bool carousel=false){
+  if(!carousel)ResetCarousel();
 
   li=ii=0;Picture(Path.Combine(res,"ui","background.png"),0,0,1920,1080);
 
@@ -18,7 +19,7 @@ sealed partial class LauncherView {
 
    if(!string.IsNullOrEmpty(game.BackgroundPath)){Picture(game.BackgroundPath,0,0,1920,1080,false,960,540);ToneLast(72,72,82,255);}
 
-   else {string cover=Cover(game);if(Path.GetFileName(cover)!="missing.png"){Picture(cover,0,-420,1920,1920,false,48,48);ToneLast(35,35,52,115);}}
+   else {string cover=Cover(game);if(Path.GetFileName(cover)!="missing.png"){Picture(cover,0,-420,1920,1920,false,carousel?640:48,carousel?640:48);ToneLast(carousel?85:35,carousel?82:35,carousel?99:52,carousel?195:115);}}
 
   }
 
@@ -26,7 +27,7 @@ sealed partial class LauncherView {
 
   Picture(Path.Combine(res,"ui","tizenps-wordmark.png"),170,41,260,76,true);
 
-  Text(breadcrumb,465,61,1190,52,27,"#b7accd");Text("0.3.39",1725,64,130,40,22,"#a59bb9");
+  Text(breadcrumb,465,61,1190,52,27,"#b7accd");Text("0.3.40",1725,64,130,40,22,"#a59bb9");
 
  }
 
@@ -52,7 +53,7 @@ sealed partial class LauncherView {
 
   index=Math.Max(0,Math.Min(index,Math.Max(0,games.Count-1)));
 
-  BeginScene("LIBRARY  /  "+new[]{"All games","Favourites","Recently played","Unavailable"}[Math.Max(0,Math.Min(tab,3))]+"  /  "+(GridView?"Grid":"Carousel"),games.Count>0?games[index]:null);
+  BeginScene("LIBRARY  /  "+new[]{"All games","Favourites","Recently played","Unavailable"}[Math.Max(0,Math.Min(tab,3))]+"  /  "+(GridView?"Grid":"Carousel"),games.Count>0?games[index]:null,!GridView&&games.Count>0);
 
   if(games.Count==0){Text(tab==1?"No favourites available":tab==2?"No recent games available":tab==3?"All linked games are available":"Your collection starts here",190,330,1500,110,62);Text(tab==1?"Open a game page and choose Add favourite. Back opens library options.":tab==2?"Games appear here after you launch them. Back opens library options.":tab==3?"Removed or disconnected games keep their favourites, history and saves.":"Connect your USB drive with games in a PSX folder. Back opens library options.",195,490,1500,100,29,"#c4bad4");}
 
@@ -82,26 +83,69 @@ sealed partial class LauncherView {
 
   else{
 
-   for(int offset=-2;offset<=2;offset++){int n=index+offset;if(n<0||n>=games.Count)continue;int size=offset==0?470:Math.Abs(offset)==1?285:160;int x=offset==0?725:offset==-1?340:offset==1?1295:offset==-2?90:1685;int y=offset==0?245:offset==-1||offset==1?340:400;
-
-    if(offset==0)Picture(Path.Combine(res,"ui","cover-focus.png"),x-14,y-14,size+28,size+28);Picture(Cover(games[n]),x,y,size,size,true);
-
-   }
-
-   Text("SELECTED GAME  "+(index+1)+" / "+games.Count,725,175,900,42,22,"#c0a4ef");
-
-   int titleSize=games[index].Title.Length>38?38:48;int titleX=Math.Max(160,(int)((1920-Math.Min(1500,games[index].Title.Length*titleSize*.52))/2));
-
-   Text(games[index].Title,titleX,770,1840-titleX,125,titleSize);
-
-   Text(tab==3?"Reconnect the drive or check the game file":"Press OK to open this game",640,905,1160,45,27,"#b7dccf");
-
+   DrawCarousel(games,index,tab,status,scanning);
+   EndScene();
+   return;
   }
-
   Text(scanning?"Refreshing USB library...":status.Length>0?status:GridView?"D-pad: browse games     OK: open game     Back: view, filters & options":"Left / Right: browse covers     OK: open game     Down: grid     Up: filters     Back: options",70,1015,1780,52,22,"#c1b6d0");EndScene();
 
  }
 
+ LibraryGame previousSelection;
+ int previousIndex,previousCount,previousTab;
+ partial void AnimateSlide(int step,Action<double> draw);
+ partial void StopSlide();
+ partial void AlignLastLabel();
+ void ResetCarousel(){StopSlide();previousSelection=null;}
+ void Center(string title,int y,int height,int size,string color){
+  Text(title,180,y,1560,height,size,color);
+  AlignLastLabel();
+ }
+ void Band(int x,int y,int w,int h,int r,int g,int b,int a){
+  Picture(Path.Combine(res,"ui","surface.png"),x,y,w,h,false,8,8);
+  ToneLast(r,g,b,a);
+ }
+ void DrawCarousel(List<LibraryGame> games,int index,int tab,string status,bool scanning){
+  var selected=games[index];
+  int step=0;
+  bool sameList=previousCount==games.Count&&previousTab==tab&&previousSelection!=null
+      &&object.ReferenceEquals(previousSelection,games[previousIndex]);
+  if(sameList){
+   if(index==(previousIndex+1)%games.Count&&index!=previousIndex)step=1;
+   else if(index==(previousIndex+games.Count-1)%games.Count&&index!=previousIndex)step=-1;
+  }
+  if(!sameList||Math.Abs(index-previousIndex)>1&&games.Count<7||step==0&&index!=previousIndex)StopSlide();
+  if(games.Count<7)step=sameList&&Math.Abs(index-previousIndex)==1?index-previousIndex:0;
+  previousSelection=selected;previousIndex=index;previousTab=tab;previousCount=games.Count;
+
+  Band(0,154,1920,194,12,13,25,194);
+  Center(selected.Title,186,133,selected.Title.Length>52?42:56,"#f5f2ff");
+  Band(0,881,1920,199,10,12,22,222);
+  Center((index+1).ToString("00")+"   /   "+games.Count.ToString("00")+"     •     OK opens game details",899,52,25,"#ddd6ec");
+  Center("Left / Right   Browse       •       Down   Grid       •       Up   Filters       •       Back   Options",966,48,24,"#cdc3df");
+  Center(scanning?"Refreshing USB library…":tab==3?"Reconnect the drive or check the game file":status,1021,50,19,"#b5afc5");
+
+  // Decode each visible case at a fixed size. Animation only changes its geometry.
+  int first=games.Count>=7?-3:Math.Max(-3,-index);
+  int last=games.Count>=7?3:Math.Min(3,games.Count-1-index);
+  string[] covers=new string[last-first+1];
+  for(int d=first;d<=last;d++)covers[d-first]=Cover(games[(index+d+games.Count)%games.Count]);
+  int startImage=ii;
+  Action<double> draw=offset=>{
+   ii=startImage;
+   for(int d=first;d<=last;d++){
+    double distance=d+offset,focus=Math.Max(0,1-Math.Abs(distance));
+    int size=(int)(236+156*focus),x=(int)(960+distance*348-size/2),y=600-size/2;
+    int border=d==0?5:2;
+    if(d==0)Band(x-border,y-border,size+2*border,size+2*border,190,162,251,255);
+    else Band(x-border,y-border,size+2*border,size+2*border,54,52,71,255);
+    Picture(covers[d-first],x,y,size,size,true,512,512);
+    int shade=(int)(183+72*focus);ToneLast(shade,shade,shade,255);
+   }
+  };
+  draw(0);
+  AnimateSlide(step,draw);
+ }
  public void DrawGame(LibraryGame g,PlayerOptions saved,bool custom,string warning,string[] actions,int selected,string stats,string status){
 
   BeginScene("LIBRARY  /  GAME",g);

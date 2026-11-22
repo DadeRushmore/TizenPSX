@@ -25,7 +25,37 @@ sealed partial class LauncherView {
  public LauncherView(Window w,string r){win=w;res=r;}
  public bool GridView {get;set;}
  public void InvalidateArtwork(){for(int n=0;n<paths.Count;n++)paths[n]="";artworkNotes.Clear();artworkFailed.Clear();}
- public void Hide(){foreach(var l in labels)l.Hide();for(int n=0;n<images.Count;n++){Screen.evas_object_hide(images[n]);evas_object_image_file_set(images[n],null,null);paths[n]="";}artworkNotes.Clear();artworkFailed.Clear();}
+ public void Hide(){ResetCarousel();foreach(var l in labels)l.Hide();for(int n=0;n<images.Count;n++){Screen.evas_object_hide(images[n]);evas_object_image_file_set(images[n],null,null);paths[n]="";}artworkNotes.Clear();artworkFailed.Clear();}
+ IntPtr slideTimer;
+ double slideStart, slideOffset;
+ static double SlideClock => System.Diagnostics.Stopwatch.GetTimestamp() / (double)System.Diagnostics.Stopwatch.Frequency;
+ double RemainingSlide(){
+  double t=Math.Max(0,1-(SlideClock-slideStart)/.22);
+  return slideOffset*t*t*t;
+ }
+ internal void FinishSlide(){if(slideTimer!=IntPtr.Zero)finishSlide?.Invoke();ResetCarousel();}
+ Action finishSlide;
+ partial void StopSlide(){
+  finishSlide=null;
+  if(slideTimer!=IntPtr.Zero){EcoreMainloop.RemoveTimer(slideTimer);slideTimer=IntPtr.Zero;}
+  slideOffset=0;
+ }
+ partial void AnimateSlide(int step,Action<double> draw){
+  double start=step+RemainingSlide();
+  StopSlide();
+  slideOffset=Math.Max(-1.5,Math.Min(1.5,start));slideStart=SlideClock;
+  draw(slideOffset);
+  if(Math.Abs(slideOffset)<.002)return;
+  finishSlide=()=>draw(0);
+  slideTimer=EcoreMainloop.AddTimer(1.0/60,()=>{
+   double remaining=RemainingSlide();
+   if(Math.Abs(remaining)<.002){draw(0);slideTimer=IntPtr.Zero;slideOffset=0;finishSlide=null;return false;}
+   draw(remaining);return true;
+  });
+ }
+ partial void AlignLastLabel(){
+  var label=labels[li-1];label.Text="<align=center>"+label.Text+"</align>";
+ }
  void ReleaseImage(int n){Screen.evas_object_hide(images[n]);evas_object_image_file_set(images[n],null,null);paths[n]="";}
  void ToneLast(int r,int g,int b,int a){if(ii>0)evas_object_color_set(images[ii-1],r,g,b,a);}
  static string Safe(string s){return (s??"").Replace("&","&amp;").Replace("<","&lt;").Replace(">","&gt;");}
