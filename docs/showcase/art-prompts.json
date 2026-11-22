@@ -1,0 +1,27 @@
+{
+  "tool": "Built-in image_gen",
+  "date": "2026-11-22",
+  "prompt_template": "Use case: stylized-concept. Asset: original fictional game-cover illustration for public emulator interface demonstrations. Create a polished portrait cover, 2:3 aspect ratio, full bleed. {scene} Premium editorial video game key art, striking silhouette, rich controlled contrast, meticulous detail, sophisticated composition. Title exactly \"{TITLE}\" in large beautifully spaced readable lettering in the upper quarter; small text \"ORIGINAL DEMO ART\" near the bottom. No console or publisher branding, no age-rating logos, no real game characters, no imitation of an existing franchise, no screenshots, no gameplay-performance claims. All scenery and characters must be original. This is illustrative sample artwork, not an actual game release.",
+  "concepts": [
+    {
+      "file": "art/neon-vector.png",
+      "title": "NEON VECTOR",
+      "scene": "An original aerodynamic silver hover racer curves through an elevated midnight circuit above a futuristic coastal city, electric cyan track lights, vivid magenta reflections, graphic speed streaks."
+    },
+    {
+      "file": "art/orbit-zero.png",
+      "title": "ORBIT ZERO",
+      "scene": "A solitary original astronaut in an ivory pressure suit stands on a violet moon, a gigantic orange eclipsed planet above, delicate orbital rings and a distant geometric research outpost."
+    },
+    {
+      "file": "art/ember-vale.png",
+      "title": "EMBER VALE",
+      "scene": "An original small cloaked traveler with a lantern looks over a lush luminous green valley toward a warm amber ruined citadel, dramatic mountains, floating motes, painterly adventure."
+    },
+    {
+      "file": "art/pixel-horizon.png",
+      "title": "PIXEL HORIZON",
+      "scene": "A vivid original low-poly floating archipelago with crystalline waterfalls, coral red and turquoise geometric trees and a tiny original explorer, warm golden sunset, playful early 3D adventure energy."
+    }
+  ]
+}
